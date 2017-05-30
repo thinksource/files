@@ -5,6 +5,7 @@
 file="$1"
 while IFS="=" read -r key value; do
   case "$key" in
+    #delete last character as the last one is \r\n
     "title") title="${value::-1}";;
     "environment") environment="${value::-1}";;
   esac
